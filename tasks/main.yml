@@ -1,0 +1,11 @@
+- name: Ensure at least empty ssh_known_hosts file
+  file:
+    name: /etc/ssh/ssh_known_hosts
+    state: touch
+
+- name: Add known hosts to ssh_known_hosts file
+  lineinfile:
+    dest: /etc/ssh/ssh_known_hosts
+    regexp: "^{{ item.host }}"
+    line: "{{ item.key }}"
+  with_items: ssh_known_hosts_default + ssh_known_hosts
