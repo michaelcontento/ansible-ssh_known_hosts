@@ -1,0 +1,10 @@
+galaxy_info:
+  author: Michael Contento (michaelcontento@gmail.com)
+  description: Manage /etc/ssh/ssh_known_hosts
+  license: MIT
+  min_ansible_version: 1.2
+  categories:
+  - development
+  - system
+
+dependencies: []
